@@ -60,44 +60,6 @@ def Abbreviator(txt_file):
                         d=x.split(s)
                 vc+=d
         return vc
-
-    """Function to select unique index number from words after removing the first character. 
-    This index are arranged in ascending order to obey the rule where two further letters in 
-    name are selected in order 
-    """
-    def uniq_ind(joined_word):
-        index = []
-        # generate random numbers that fall in the range of the current word
-        gen = random.randint(0, len(joined_word)-1)
-        for x in range(2):
-            while gen in index:
-                gen = random.randint(0, len(joined_word)-1)
-            index.append(gen)
-        # Sort the numbers generated in ascending order
-        index.sort()
-        return index
-        
-    """Function to make abbreviations. It loops through each word in the list and extract the 
-    first letter as a constant, followed by two further letters with the help of the previous 
-    function.
-    """
-    def extract_letters(lst):
-        # Empty list to hold abbreviation strings
-        all_abbre = []
-        # Empty list to hold the remaining letters after removing the first letter.
-        part = []
-        all_abbre.append(lst[0][0])
-        for each in lst:
-            first_out = each[1:]
-            part.append(first_out)
-        joined = ''.join(part)
-        joined = joined.replace(' ', '')
-        ind = uniq_ind(joined)
-        # Adding two letter to the list with the index number generated
-        all_abbre.append(joined[ind[0]])
-        all_abbre.append(joined[ind[1]])
-        str_abb = ''.join(all_abbre)
-        return str_abb
     
     values_dict = {
         'A':25, 'B':8, 'C':8, 'D': 9, 'E':35,
