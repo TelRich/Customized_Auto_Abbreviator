@@ -183,7 +183,7 @@ def Abbreviator(txt_file):
                 part.append(word)
                 part.append(string)
             elif len(each) == 2:
-                string += each[0][0] + each[1][0] + each[1][1]
+                string += each[0][0] + each[1][0] + low_num_char_selector1(each[1])
                 part.append(word)
                 part.append(string)
             elif len(each) == 1:
