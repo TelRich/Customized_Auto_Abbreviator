@@ -3,9 +3,7 @@ def Abbreviator(txt_file):
     of names of some kind and generate three-letter abbreviations for each of these objects.
     Some functions was created to help achieve this.
     """
-    # Import random and set seed to 1
-    import random
-    random.seed(1)
+
 
     """Function to remove all apostrophes from each names in the list.
     It clean the names for further processes. 
@@ -135,7 +133,7 @@ def Abbreviator(txt_file):
                 part.append(word)
                 part.append(string)
             elif len(sep) == 2:
-                string += sep[0][0] + sep[1][0] + sep[1][1]
+                string += sep[0][0] + sep[1][0] + low_num_char_selector1(sep[1])
                 part.append(word)
                 part.append(string)
         else:
